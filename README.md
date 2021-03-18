@@ -1,1 +1,1 @@
-# assignments
+invoice_details.sql will be in database folder of an project 
