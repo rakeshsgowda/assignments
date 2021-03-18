@@ -66,7 +66,9 @@ body {
 	</div>
 	<div class="container">
 		<div class="row">
-			<strong>Invoice No</strong>:{{$invoice_no}}<br> <strong>Date:</strong><?php echo date("d-m-Y",strtotime($invoice_date));?>
+			<strong>Invoice No</strong>:{{$invoice->invoice_no}}<br> 
+			<strong>Date:</strong><?php echo date("d-m-Y",strtotime($invoice->created_on));?><br>
+			<strong>Invoice Status:</strong>{{$invoice->status}}
 	</div>
 	</div>
 	<div class="container">

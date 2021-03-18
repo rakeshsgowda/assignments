@@ -27,6 +27,9 @@
 .btn{
 padding: 5px;
 }
+.items p{
+font-size:15px;
+} 
 </style>
 <style>
 body {
@@ -38,9 +41,13 @@ body {
 	<div class="grid-container">
 		<div class="row">
 			<div class="item1">Invoice List</div>
+			<div>
+			<p>InvoiceId                      Status</p>
+			</div>
 			@foreach ($invoices as $invoice)
 			<div class="items">
-			<a class="btn btn-info btn-lg" href="{{URL::to('/view-invoice')}}/{{$invoice->invoice_no}}">{{$invoice->invoice_no}}</a>
+			<p> <a class="btn btn-info btn-lg" href="{{URL::to('/view-invoice')}}/{{$invoice->invoice_no}}">{{$invoice->invoice_no}}</a>
+			{{$invoice->status}}</p>
 			</div>
 			@endforeach
 		</div>

@@ -11,7 +11,7 @@ use App\Models\Address;
 class InvoiceController extends Controller{
     
     function get_data() {
-        $result= Invoice::get('invoice_no');
+        $result= Invoice::get();
         return view('invoice',['invoices'=>$result]);
     }
     function view_data($id) {
@@ -22,8 +22,8 @@ class InvoiceController extends Controller{
             $address = Address::where('user_id',$result[0]->user_id)->get();
             $result[0]['user']=$user[0];
             $result[0]['address']=$address[0];
-            Invoice::where('invoice_no',$id)->update(['status' =>"not view"]);
+            Invoice::where('invoice_no',$id)->update(['status' =>"sucess"]);
         }
-        return view('invoiceView',['invoice'=>$result[0],'invoice_no'=>$result[0]['invoice_no'],'invoice_date'=>$result[0]['created_on']]);
+        return view('invoiceView',['invoice'=>$result[0]]);
     }
 }
