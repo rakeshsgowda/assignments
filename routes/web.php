@@ -14,7 +14,9 @@
 
 use App\Http\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
-
+Route::get('/',function(){
+    return view('welcome');
+});
 //custom routes
     Route::get('/invoice',[InvoiceController::class, 'get_data']);
     Route::get('/view-invoice/{id}',[InvoiceController::class, 'view_data']);

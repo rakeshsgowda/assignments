@@ -54,6 +54,7 @@ body {
 </style>
 </head>
 <body>
+@if(!empty($invoice))
 	<div class="row">
 		<div class="grid-container mx-md-n5 in-heading">
 			<div class="col px-md-5">
@@ -102,5 +103,10 @@ body {
 			</div>
 		</div>
 	</div>
+	@else
+	<div class="container"><br>
+	<h1>Invoice Not Found</h1>
+	</div>
+	@endif
 </body>
 </html>
